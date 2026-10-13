@@ -14,7 +14,8 @@ export class LoginPage {
     }
 
     async gotoOrangeHrm() {
-          await this.page.goto(`${process.env.BASE_URL}/web/index.php/auth/login`);
+          await this.page.goto(`${process.env.BASE_URL}/web/index.php/auth/login`),
+          { waitUntil: 'domcontentloaded', timeout: 60000 }
     }
 
     async loginOrangeHrm(userName: string, password: string) {
